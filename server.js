@@ -11,15 +11,8 @@ app.use(express.json());
 
 // enable cors
 
-// const corsOptions = {
-//   origin: 'https://snapbuy-five.vercel.app',
-//   credentials: true,
-// };
-
-// app.use(cors(corsOptions));
-
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://quantum-mauve.vercel.app',
   credentials: true,
 };
 app.use(cors(corsOptions));
