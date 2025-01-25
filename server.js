@@ -11,11 +11,11 @@ app.use(express.json());
 
 // enable cors
 
-const corsOptions = {
-  origin: 'https://quantum-mauve.vercel.app',
-  credentials: true,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: 'http://localhost:3000',
+//   credentials: true,
+// };
+// app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 5000;
 
