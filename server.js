@@ -30,6 +30,7 @@ app.listen(PORT, () => {
 //routes
 
 app.use('/user', require('./routes/user.route'));
+app.use('/chat', require('./routes/chat.route'));
 
 //connect mongodb
 
