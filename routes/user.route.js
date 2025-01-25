@@ -8,4 +8,8 @@ router.post('/login', userCtrl.login);
 router.get('/logout', userCtrl.logout);
 router.get('/infor', auth, userCtrl.getUser);
 
+// Email Verification Routes
+router.post('/send-verification-code', userCtrl.sendVerificationCode);
+router.post('/verify-code', userCtrl.verifyCode);
+
 module.exports = router;
