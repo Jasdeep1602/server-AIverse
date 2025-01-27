@@ -11,7 +11,7 @@ const chatCtrl = {
   createSession: async (req, res) => {
     try {
       const { userId } = req.body;
-      const newSession = new chats({ userId });
+      const newSession = new chats({ userId, createdAt: new Date() });
       await newSession.save();
       res.status(201).json(newSession);
     } catch (err) {
@@ -23,7 +23,7 @@ const chatCtrl = {
   getSessions: async (req, res) => {
     try {
       const { userId } = req.params;
-      const sessions = await chats.find({ userId });
+      const sessions = await chats.find({ userId }).sort({ createdAt: -1 });
       res.json(sessions);
     } catch (err) {
       return res.status(500).json({ msg: err.message });
@@ -68,7 +68,7 @@ const chatCtrl = {
       );
       await session.save();
 
-      res.json({ response: botResponse });
+      res.json({ user: message, response: botResponse });
     } catch (error) {
       res.status(500).json({ msg: error.message });
     }
