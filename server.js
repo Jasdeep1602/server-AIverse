@@ -12,7 +12,7 @@ app.use(express.json());
 // enable cors
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://aiverse-hazel.vercel.app',
   credentials: true,
 };
 app.use(cors(corsOptions));
