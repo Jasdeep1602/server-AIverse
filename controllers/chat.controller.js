@@ -83,6 +83,20 @@ const chatCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
+  deleteSession: async (req, res) => {
+    try {
+      const { chatId } = req.params;
+      const deletedSession = await chats.findByIdAndDelete(chatId);
+
+      if (!deletedSession) {
+        return res.status(404).json({ msg: 'Chat session not found' });
+      }
+
+      res.json({ msg: 'Chat session deleted successfully' });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
 };
 
 module.exports = chatCtrl;

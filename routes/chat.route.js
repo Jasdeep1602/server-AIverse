@@ -8,5 +8,6 @@ router.get('/sessions/:userId', auth, chatCtrl.getSessions);
 router.get('/session/:chatId', chatCtrl.getSingleSession);
 router.post('/message', auth, chatCtrl.sendMessage);
 router.get('/history/:chatId', auth, chatCtrl.getHistory);
+router.delete('/session/:chatId', chatCtrl.deleteSession);
 
 module.exports = router;
